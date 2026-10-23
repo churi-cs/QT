@@ -1,0 +1,3141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Happy Birthday Sumu! ✨🎂</title>
+  <meta name="description" content="A magical tap-to-open birthday story for Sumu.">
+  <meta name="theme-color" content="#fff6f9">
+
+  <!-- Google Fonts: Fredoka & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Anime.js v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & THEMES (Light & Dark Mode)
+       ========================================================================== */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
+
+      /* Pastel Palette - Light Mode */
+      --bg-gradient: radial-gradient(circle at 50% 20%, #fff0f5 0%, #f7e8ff 50%, #eaf4ff 100%);
+      --bg-dots: radial-gradient(rgba(180, 150, 210, 0.15) 1.5px, transparent 1.5px);
+      --bg-overlay: rgba(255, 255, 255, 0.65);
+      --card-bg: rgba(255, 255, 255, 0.82);
+      --card-border: rgba(230, 215, 245, 0.8);
+      --card-shadow: 0 16px 40px rgba(160, 130, 190, 0.14), 0 2px 8px rgba(160, 130, 190, 0.08);
+
+      --text-main: #2e1d3d;
+      --text-sub: #7a668c;
+      --text-muted: #a393b3;
+
+      --accent-pink: #ff7597;
+      --accent-pink-soft: #ffe4ec;
+      --accent-lavender: #a78bfa;
+      --accent-lavender-soft: #ede9fe;
+      --accent-mint: #34d399;
+      --accent-mint-soft: #d1fae5;
+      --accent-yellow: #fbbf24;
+      --accent-yellow-soft: #fef3c7;
+      --accent-peach: #fb923c;
+      --accent-peach-soft: #ffedd5;
+      --accent-cyan: #38bdf8;
+      --accent-cyan-soft: #e0f2fe;
+
+      --gold: #f59e0b;
+      --gold-glow: rgba(245, 158, 11, 0.35);
+
+      --ui-blur: blur(20px);
+      --font-main: 'Fredoka', cursive, -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-hand: 'Caveat', cursive;
+
+      --tilt-x: 0px;
+      --tilt-y: 0px;
+    }
+
+    /* Dark Mode Theme */
+    [data-theme="dark"] {
+      --bg-gradient: radial-gradient(circle at 50% 20%, #1e1329 0%, #150d1e 50%, #0d0914 100%);
+      --bg-dots: radial-gradient(rgba(215, 190, 255, 0.12) 1.5px, transparent 1.5px);
+      --bg-overlay: rgba(24, 16, 36, 0.75);
+      --card-bg: rgba(36, 24, 54, 0.85);
+      --card-border: rgba(140, 110, 190, 0.3);
+      --card-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 2px 10px rgba(0, 0, 0, 0.3);
+
+      --text-main: #fbf7ff;
+      --text-sub: #c5b5dc;
+      --text-muted: #8b79a3;
+
+      --accent-pink: #ff85a5;
+      --accent-pink-soft: rgba(255, 117, 151, 0.2);
+      --accent-lavender: #bfa5ff;
+      --accent-lavender-soft: rgba(167, 139, 250, 0.2);
+      --accent-mint: #5eead4;
+      --accent-mint-soft: rgba(52, 211, 153, 0.2);
+      --accent-yellow: #fcd34d;
+      --accent-yellow-soft: rgba(251, 191, 36, 0.2);
+      --accent-peach: #fdba74;
+      --accent-peach-soft: rgba(251, 146, 60, 0.2);
+      --accent-cyan: #7dd3fc;
+      --accent-cyan-soft: rgba(56, 189, 248, 0.2);
+
+      --gold: #fbbf24;
+      --gold-glow: rgba(251, 191, 36, 0.45);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg-gradient: radial-gradient(circle at 50% 20%, #1e1329 0%, #150d1e 50%, #0d0914 100%);
+        --bg-dots: radial-gradient(rgba(215, 190, 255, 0.12) 1.5px, transparent 1.5px);
+        --bg-overlay: rgba(24, 16, 36, 0.75);
+        --card-bg: rgba(36, 24, 54, 0.85);
+        --card-border: rgba(140, 110, 190, 0.3);
+        --card-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 2px 10px rgba(0, 0, 0, 0.3);
+
+        --text-main: #fbf7ff;
+        --text-sub: #c5b5dc;
+        --text-muted: #8b79a3;
+
+        --accent-pink: #ff85a5;
+        --accent-pink-soft: rgba(255, 117, 151, 0.2);
+        --accent-lavender: #bfa5ff;
+        --accent-lavender-soft: rgba(167, 139, 250, 0.2);
+        --accent-mint: #5eead4;
+        --accent-mint-soft: rgba(52, 211, 153, 0.2);
+        --accent-yellow: #fcd34d;
+        --accent-yellow-soft: rgba(251, 191, 36, 0.2);
+        --accent-peach: #fdba74;
+        --accent-peach-soft: rgba(251, 146, 60, 0.2);
+        --accent-cyan: #7dd3fc;
+        --accent-cyan-soft: rgba(56, 189, 248, 0.2);
+
+        --gold: #fbbf24;
+        --gold-glow: rgba(251, 191, 36, 0.45);
+      }
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow: hidden;
+      font-family: var(--font-main);
+      color: var(--text-main);
+      background: var(--bg-gradient);
+      background-size: 100% 100%;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      transition: background 0.6s ease, color 0.4s ease;
+    }
+
+    /* Parallax Floating Blobs Background */
+    .bg-canvas-wrap {
+      position: fixed;
+      inset: -40px;
+      z-index: 0;
+      pointer-events: none;
+      background-image: var(--bg-dots);
+      background-size: 28px 28px;
+      transform: translate3d(var(--tilt-x), var(--tilt-y), 0);
+      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(55px);
+      opacity: 0.55;
+      pointer-events: none;
+      animation: orbFloat 18s ease-in-out infinite alternate;
+    }
+    .orb-1 {
+      width: 340px;
+      height: 340px;
+      background: var(--accent-pink-soft);
+      top: 5%;
+      left: -10%;
+    }
+    .orb-2 {
+      width: 320px;
+      height: 320px;
+      background: var(--accent-lavender-soft);
+      bottom: 10%;
+      right: -8%;
+      animation-delay: -6s;
+    }
+    .orb-3 {
+      width: 260px;
+      height: 260px;
+      background: var(--accent-mint-soft);
+      top: 50%;
+      left: 60%;
+      animation-delay: -12s;
+    }
+
+    @keyframes orbFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -40px) scale(1.15); }
+      100% { transform: translate(-25px, 35px) scale(0.9); }
+    }
+
+    /* Confetti & Fireworks Canvas Overlay */
+    #fx-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* ==========================================================================
+       MAIN APP WRAPPER (Mobile-First Safe Area Aware)
+       ========================================================================== */
+    .app-viewport {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+      padding-top: calc(var(--sat) + 12px);
+      padding-bottom: calc(var(--sab) + 12px);
+      padding-left: calc(var(--sal) + 16px);
+      padding-right: calc(var(--sar) + 16px);
+    }
+
+    /* Desktop Outer Frame Glow for luxury mobile preview look */
+    @media (min-width: 481px) {
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at center, #fbf2f8 0%, #e2d9ec 100%);
+      }
+      [data-theme="dark"] body {
+        background: radial-gradient(circle at center, #1b1227 0%, #0a0610 100%);
+      }
+      .app-viewport {
+        height: 94dvh;
+        max-height: 880px;
+        border-radius: 44px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22), 0 0 0 10px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 180, 210, 0.35);
+        background: var(--bg-gradient);
+        border: 1px solid var(--card-border);
+        overflow: hidden;
+      }
+    }
+
+    /* ==========================================================================
+       HEADER CONTROLS & STORY PROGRESS
+       ========================================================================== */
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 4px 6px 12px 6px;
+      z-index: 30;
+    }
+
+    .story-progress {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    }
+
+    .prog-pill {
+      width: 18px;
+      height: 6px;
+      border-radius: 4px;
+      background: var(--text-muted);
+      opacity: 0.35;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .prog-pill.active {
+      width: 32px;
+      opacity: 1;
+      background: linear-gradient(90deg, var(--accent-pink), var(--accent-lavender));
+      box-shadow: 0 2px 8px var(--accent-pink-soft);
+    }
+    .prog-pill.completed {
+      opacity: 0.85;
+      background: var(--accent-mint);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s;
+    }
+    .icon-btn:active {
+      transform: scale(0.9);
+    }
+
+    /* ==========================================================================
+       SCENE CONTAINER & SCENE STYLES
+       ========================================================================== */
+    .scenes-container {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scene {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 6px 14px 6px;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.92) translateY(24px);
+      transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      z-index: 5;
+    }
+
+    .scene.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+      z-index: 10;
+    }
+
+    .scene.exit {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(1.08) translateY(-24px);
+    }
+
+    /* Common Card Wrappers */
+    .scene-content {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Bottom Prompt Badge */
+    .tap-hint-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 6px 0;
+      z-index: 20;
+    }
+
+    .tap-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      border: 1px solid var(--card-border);
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      animation: gentlePulse 2.4s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    .tap-hint span.tap-icon {
+      font-size: 1.1rem;
+      animation: tapNudge 1.6s ease-in-out infinite;
+    }
+
+    @keyframes gentlePulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+      50% { transform: scale(1.04); box-shadow: 0 8px 24px var(--accent-pink-soft); }
+    }
+    @keyframes tapNudge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* ==========================================================================
+       SCENE 0: COUNTDOWN GATE & BOUNCING GIFT
+       ========================================================================== */
+    .gate-badge {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent-pink);
+      background: var(--accent-pink-soft);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 117, 151, 0.3);
+    }
+
+    .gate-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--accent-lavender) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gate-sub {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+      max-width: 300px;
+    }
+
+    /* 3D-ish Illustrated Bouncing Gift Box */
+    .gift-stage {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      margin: 10px auto 25px auto;
+      cursor: pointer;
+      perspective: 700px;
+    }
+
+    .gift-glow {
+      position: absolute;
+      inset: -15px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-pink-soft) 20%, transparent 70%);
+      filter: blur(15px);
+      z-index: 1;
+      animation: giftAura 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes giftAura {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      100% { opacity: 0.9; transform: scale(1.15); }
+    }
+
+    .gift-box-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      animation: giftFloat 3.2s ease-in-out infinite;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes giftFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-12px) rotate(-2deg); }
+      75% { transform: translateY(-6px) rotate(2deg); }
+    }
+
+    .gift-box-base {
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      width: 140px;
+      height: 105px;
+      background: linear-gradient(135deg, #ff8fb1 0%, #ff6b93 100%);
+      border-radius: 18px;
+      box-shadow: 0 16px 28px rgba(255, 107, 147, 0.35), inset 0 2px 4px rgba(255,255,255,0.4);
+      overflow: hidden;
+    }
+
+    /* Gold Satin Ribbon on Box */
+    .gift-ribbon-v {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 26px;
+      height: 100%;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #ffeb99 0%, #f59e0b 100%);
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    }
+    .gift-ribbon-h {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 24px;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, #ffeb99 0%, #f59e0b 100%);
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    }
+
+    .gift-box-lid {
+      position: absolute;
+      top: 38px;
+      left: 7px;
+      width: 156px;
+      height: 42px;
+      background: linear-gradient(135deg, #ffa8c2 0%, #ff759b 100%);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(230, 80, 120, 0.3), inset 0 3px 6px rgba(255,255,255,0.5);
+      z-index: 5;
+      transform-origin: top center;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .gift-lid-ribbon {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 28px;
+      height: 100%;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #fff3b0 0%, #f59e0b 100%);
+    }
+
+    /* Bow on Top */
+    .gift-bow {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
+      width: 68px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bow-loop-l, .bow-loop-r {
+      width: 30px;
+      height: 26px;
+      background: linear-gradient(135deg, #ffeb99 0%, #f59e0b 100%);
+      border-radius: 50% 50% 10% 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .bow-loop-l { transform: rotate(-25deg); }
+    .bow-loop-r { transform: scaleX(-1) rotate(-25deg); }
+    .bow-center {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #fbbf24;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Countdown Display Cards */
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 14px;
+    }
+
+    .count-card {
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 10px 4px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .count-num {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+    }
+
+    .count-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    /* Unlocked State Button */
+    .unlock-cta-wrap {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .btn-open-gift {
+      width: 100%;
+      padding: 14px 24px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      font-family: var(--font-main);
+      border: none;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ff7597 0%, #a78bfa 100%);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(255, 117, 151, 0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      animation: btnPulse 2s infinite;
+      transition: transform 0.2s;
+    }
+    .btn-open-gift:active {
+      transform: scale(0.96);
+    }
+    @keyframes btnPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 25px rgba(255, 117, 151, 0.4); }
+      50% { transform: scale(1.03); box-shadow: 0 14px 32px rgba(167, 139, 250, 0.6); }
+    }
+
+    .test-skip-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.03);
+    }
+
+    /* ==========================================================================
+       SCENE 1: LOCK SCREEN & MESSAGE NOTIFICATION
+       ========================================================================== */
+    .lockscreen-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .status-bar-mock {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0 16px;
+      color: var(--text-sub);
+    }
+
+    .status-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+
+    .lock-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .lock-icon-svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--text-sub);
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+
+    .lock-clock {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      color: var(--text-main);
+    }
+
+    .lock-date {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      margin-top: 6px;
+    }
+
+    /* Floating Notification Card */
+    .notification-card {
+      width: 100%;
+      max-width: 350px;
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 16px 18px;
+      box-shadow: var(--card-shadow), 0 0 20px rgba(255, 117, 151, 0.15);
+      cursor: pointer;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .notification-card:active {
+      transform: scale(0.97);
+    }
+
+    .notif-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .notif-app-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .notif-badge-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent-pink) 0%, #ff8fb1 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 10px rgba(255, 117, 151, 0.35);
+    }
+
+    .notif-app-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-sub);
+    }
+
+    .notif-time {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .notif-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      text-align: left;
+    }
+
+    .notif-body {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    .home-bar-mock {
+      width: 130px;
+      height: 5px;
+      background: var(--text-muted);
+      border-radius: 4px;
+      opacity: 0.4;
+      margin-top: 10px;
+    }
+
+    /* ==========================================================================
+       SCENE 2: NAME + AGE CELEBRATION
+       ========================================================================== */
+    .scene2-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Floating Rising Balloons */
+    .balloons-canvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .floating-balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 50px;
+      height: 64px;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      opacity: 0.85;
+      box-shadow: inset -6px -6px 12px rgba(0,0,0,0.1), inset 6px 6px 12px rgba(255,255,255,0.6), 0 8px 18px rgba(0,0,0,0.08);
+    }
+    .floating-balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 24px;
+      background: rgba(160, 140, 180, 0.5);
+    }
+
+    .b-pink { background: linear-gradient(135deg, #ff9ebb, #ff7597); }
+    .b-lavender { background: linear-gradient(135deg, #d8b4fe, #a78bfa); }
+    .b-mint { background: linear-gradient(135deg, #6ee7b7, #34d399); }
+    .b-yellow { background: linear-gradient(135deg, #fde68a, #fbbf24); }
+    .b-peach { background: linear-gradient(135deg, #fed7aa, #fb923c); }
+
+    .b-top-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-pink);
+      margin-bottom: 8px;
+      z-index: 2;
+    }
+
+    /* Sumu Name Letters */
+    .name-letters-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 24px;
+      z-index: 2;
+    }
+
+    .letter-bubble {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 66px;
+      font-size: 2.8rem;
+      font-weight: 700;
+      border-radius: 18px;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.12);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+      transform: scale(0) translateY(50px);
+    }
+
+    .lb-1 { background: linear-gradient(135deg, #ff7597, #ff9ebb); }
+    .lb-2 { background: linear-gradient(135deg, #a78bfa, #c4b5fd); }
+    .lb-3 { background: linear-gradient(135deg, #34d399, #6ee7b7); }
+    .lb-4 { background: linear-gradient(135deg, #fb923c, #fdba74); }
+    .lb-5 { background: linear-gradient(135deg, #fbbf24, #fde68a); }
+
+    /* Age Counter Card */
+    .age-badge-card {
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 18px 24px;
+      max-width: 320px;
+      width: 100%;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .age-pill-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-lavender);
+      background: var(--accent-lavender-soft);
+      padding: 4px 14px;
+      border-radius: 14px;
+      margin-bottom: 10px;
+    }
+
+    .age-num-display {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .age-unit {
+      font-size: 1.35rem;
+      color: var(--accent-pink);
+    }
+
+    .age-tagline {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       SCENE 3: MEMORIES POLAROID GALLERY
+       ========================================================================== */
+    .memories-stage {
+      position: relative;
+      width: 100%;
+      max-width: 330px;
+      height: 380px;
+      margin: 10px auto;
+      perspective: 900px;
+    }
+
+    .polaroid-card {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px 16px 24px 16px;
+      box-shadow: 0 18px 40px rgba(50, 20, 80, 0.16), 0 4px 10px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s;
+      transform-origin: center bottom;
+      cursor: pointer;
+    }
+    [data-theme="dark"] .polaroid-card {
+      background: #2a1f3a;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.6);
+    }
+
+    /* Washi Tape on top */
+    .washi-tape {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 90px;
+      height: 24px;
+      background: rgba(220, 190, 255, 0.7);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      z-index: 10;
+      border-left: 2px dashed rgba(255,255,255,0.6);
+      border-right: 2px dashed rgba(255,255,255,0.6);
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: 220px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffeef4 0%, #eef0ff 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    [data-theme="dark"] .photo-frame {
+      background: linear-gradient(135deg, #3c2a52 0%, #291e38 100%);
+    }
+
+    .photo-big-emoji {
+      font-size: 5rem;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
+      animation: emojiPulse 3s ease-in-out infinite;
+    }
+    @keyframes emojiPulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.08) rotate(4deg); }
+    }
+
+    .memory-index-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-lavender);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+    [data-theme="dark"] .memory-index-badge {
+      background: rgba(30, 20, 45, 0.85);
+    }
+
+    .polaroid-caption-box {
+      width: 100%;
+      margin-top: 16px;
+      text-align: left;
+      min-height: 58px;
+    }
+
+    .remember-tag {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent-pink);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 2px;
+    }
+
+    .typewriter-text {
+      font-family: var(--font-hand);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: var(--accent-pink);
+      vertical-align: middle;
+      margin-left: 2px;
+      animation: blinkCursor 0.8s infinite;
+    }
+    @keyframes blinkCursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* ==========================================================================
+       SCENE 4: FUTURE DOCTOR (ECG, BEATING HEART, PRESCRIPTION & STAMP)
+       ========================================================================== */
+    .doctor-stage {
+      width: 100%;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Medical Cardiac Monitor Card */
+    .ecg-card {
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 12px 14px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle Medical Grid Lines */
+    .ecg-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 117, 151, 0.08) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 117, 151, 0.08) 1px, transparent 1px);
+      background-size: 14px 14px;
+      pointer-events: none;
+    }
+
+    .ecg-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-pink);
+    }
+
+    .ecg-svg-wrap {
+      width: 100%;
+      height: 80px;
+      position: relative;
+    }
+
+    #ecg-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* Pulsing Beating Heart */
+    .beating-heart-wrap {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .beating-heart-svg {
+      width: 36px;
+      height: 36px;
+      fill: var(--accent-pink);
+      filter: drop-shadow(0 0 10px rgba(255, 117, 151, 0.6));
+      transform-origin: center center;
+    }
+
+    /* Realistic Cardiac Rhythm: Lub-Dub */
+    @keyframes heartLubDub {
+      0% { transform: scale(1); }
+      14% { transform: scale(1.22); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      70% { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+
+    .beating-heart-svg.beating {
+      animation: heartLubDub 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    }
+
+    /* Prescription Card (Rx Pad) */
+    .rx-card {
+      position: relative;
+      width: 100%;
+      background: #fffdfa;
+      border-radius: 18px;
+      padding: 16px 18px;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.05);
+      border: 1px solid #ebd9c8;
+      color: #3b2c20;
+      text-align: left;
+      overflow: hidden;
+    }
+    [data-theme="dark"] .rx-card {
+      background: #271e2e;
+      border-color: #533e63;
+      color: #f7edff;
+    }
+
+    .rx-clinic-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--accent-pink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rx-clinic-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border-bottom: 1.5px dashed rgba(200, 160, 160, 0.4);
+      padding-bottom: 6px;
+      margin-bottom: 8px;
+    }
+
+    .rx-meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .rx-symbol {
+      font-family: 'Times New Roman', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--accent-pink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .rx-item {
+      font-size: 0.86rem;
+      line-height: 1.35;
+      margin-bottom: 6px;
+      padding-left: 6px;
+      border-left: 2px solid var(--accent-lavender);
+    }
+    .rx-item strong {
+      color: var(--text-main);
+    }
+
+    .rx-footer {
+      margin-top: 10px;
+      border-top: 1px dashed rgba(200, 160, 160, 0.4);
+      padding-top: 6px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .rx-sig {
+      font-family: var(--font-hand);
+      font-size: 1.35rem;
+      color: var(--accent-lavender);
+      line-height: 1;
+    }
+
+    /* Rubber Stamp: FUTURE DR. SUMU ✓ */
+    .dr-stamp {
+      position: absolute;
+      right: 14px;
+      bottom: 22px;
+      border: 3.5px solid #e11d48;
+      color: #e11d48;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 2px rgba(225, 29, 72, 0.25);
+      transform: rotate(-12deg) scale(0);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* ==========================================================================
+       SCENE 5: CAKE FINALE, CANDLES & PERSONAL LETTER
+       ========================================================================== */
+    .finale-stage {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* Birthday Cake Illustration */
+    .cake-container {
+      position: relative;
+      width: 250px;
+      height: 220px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      cursor: pointer;
+    }
+
+    .cake-pedestal {
+      width: 240px;
+      height: 18px;
+      background: linear-gradient(180deg, #fce7f3 0%, #fbcfe8 100%);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      position: relative;
+      z-index: 1;
+    }
+    [data-theme="dark"] .cake-pedestal {
+      background: linear-gradient(180deg, #4c325c 0%, #362244 100%);
+      border-color: rgba(140, 100, 170, 0.4);
+    }
+
+    /* Cake Tiers */
+    .cake-tier-3 {
+      width: 190px;
+      height: 60px;
+      background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+      border-radius: 14px 14px 4px 4px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    }
+    .cake-tier-2 {
+      width: 140px;
+      height: 52px;
+      background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+      border-radius: 14px 14px 4px 4px;
+      position: relative;
+      z-index: 3;
+      margin-bottom: -4px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+    .cake-tier-1 {
+      width: 90px;
+      height: 44px;
+      background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+      border-radius: 14px 14px 4px 4px;
+      position: relative;
+      z-index: 4;
+      margin-bottom: -4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Decorative Icing Drips */
+    .tier-drips {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 18px;
+      background: #ffffff;
+      border-radius: 10px 10px 12px 12px;
+      opacity: 0.9;
+    }
+    [data-theme="dark"] .tier-drips {
+      background: #fff5fa;
+    }
+
+    /* Candles on Top */
+    .candles-row {
+      position: absolute;
+      top: 26px;
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      z-index: 10;
+    }
+
+    .candle {
+      position: relative;
+      width: 10px;
+      height: 38px;
+      background: repeating-linear-gradient(45deg, #ff7597, #ff7597 4px, #ffffff 4px, #ffffff 8px);
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .candle.c-2 { height: 46px; background: repeating-linear-gradient(45deg, #a78bfa, #a78bfa 4px, #ffffff 4px, #ffffff 8px); }
+    .candle.c-3 { height: 42px; background: repeating-linear-gradient(45deg, #fbbf24, #fbbf24 4px, #ffffff 4px, #ffffff 8px); }
+
+    .candle-wick {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 8px;
+      background: #4b5563;
+    }
+
+    .candle-flame {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 22px;
+      background: radial-gradient(ellipse at 50% 80%, #fff 0%, #fbbf24 50%, #f97316 100%);
+      border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+      box-shadow: 0 0 16px #f59e0b, 0 0 30px rgba(251, 191, 36, 0.6);
+      transform-origin: center bottom;
+      animation: flameFlicker 1.8s ease-in-out infinite alternate;
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    @keyframes flameFlicker {
+      0% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+      30% { transform: translateX(-50%) scale(1.1, 0.95) rotate(2deg); }
+      60% { transform: translateX(-50%) scale(0.95, 1.08) rotate(-1deg); }
+      100% { transform: translateX(-50%) scale(1.05, 1) rotate(2deg); }
+    }
+
+    /* Smoke Puff when blown out */
+    .candle-smoke {
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 18px;
+      height: 26px;
+      background: radial-gradient(circle, rgba(200, 190, 210, 0.8) 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Mic Blowing Status Banner */
+    .mic-status-box {
+      background: var(--card-bg);
+      backdrop-filter: var(--ui-blur);
+      -webkit-backdrop-filter: var(--ui-blur);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 10px 18px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--card-shadow);
+      margin-top: 8px;
+    }
+
+    .mic-wave-indicator {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 18px;
+    }
+    .wave-bar {
+      width: 3px;
+      height: 6px;
+      background: var(--accent-pink);
+      border-radius: 2px;
+      transition: height 0.1s ease;
+    }
+
+    /* Personal Letter Unfolding Card / Modal */
+    .letter-modal {
+      position: absolute;
+      inset: 8px 6px;
+      background: #fffbf5;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 50;
+      transform: translateY(120%) scale(0.9);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+      overflow-y: auto;
+      color: #38281e;
+    }
+    [data-theme="dark"] .letter-modal {
+      background: #251b30;
+      color: #f7edff;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    }
+
+    .letter-modal.open {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .letter-stamp-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      border-bottom: 1.5px dashed rgba(200, 160, 140, 0.4);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-pink);
+    }
+
+    .letter-body {
+      font-family: var(--font-hand);
+      font-size: 1.48rem;
+      line-height: 1.4;
+      text-align: left;
+      white-space: pre-line;
+      flex: 1;
+      width: 100%;
+      padding: 4px 6px;
+      overflow-y: auto;
+    }
+
+    .letter-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      margin-top: 14px;
+    }
+
+    .btn-action {
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 20px;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: transform 0.2s;
+    }
+    .btn-action:active {
+      transform: scale(0.96);
+    }
+    .btn-melody {
+      background: linear-gradient(135deg, var(--accent-pink), #ff9ebb);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(255, 117, 151, 0.35);
+    }
+    .btn-restart {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Blobs & Dots Parallax Canvas -->
+  <div class="bg-canvas-wrap">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <!-- Confetti & Fireworks HTML5 Canvas -->
+  <canvas id="fx-canvas"></canvas>
+
+  <!-- Main Safe-Area Aware Viewport -->
+  <main class="app-viewport">
+
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+      <div class="story-progress" id="storyProgress">
+        <div class="prog-pill active" data-step="0"></div>
+        <div class="prog-pill" data-step="1"></div>
+        <div class="prog-pill" data-step="2"></div>
+        <div class="prog-pill" data-step="3"></div>
+        <div class="prog-pill" data-step="4"></div>
+        <div class="prog-pill" data-step="5"></div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">🌙</button>
+        <button class="icon-btn" id="soundToggle" title="Audio Status" aria-label="Audio Status">🔔</button>
+      </div>
+    </header>
+
+    <!-- Scene Container (Scenes 0 - 5) -->
+    <section class="scenes-container">
+
+      <!-- SCENE 0: COUNTDOWN GATE -->
+      <article class="scene active" id="scene-0">
+        <div class="scene-content" id="gateContent">
+          <div class="gate-badge">Birthday Countdown</div>
+          <h1 class="gate-title" id="gateTitle">Sumu's Special Day</h1>
+          <p class="gate-sub" id="gateSubtitle">Counting down the seconds until midnight...</p>
+
+          <!-- Bouncing Gift Box -->
+          <div class="gift-stage" id="giftBox" role="button" tabindex="0" aria-label="Gift box">
+            <div class="gift-glow"></div>
+            <div class="gift-box-wrap">
+              <div class="gift-box-base">
+                <div class="gift-ribbon-v"></div>
+                <div class="gift-ribbon-h"></div>
+              </div>
+              <div class="gift-box-lid" id="giftLid">
+                <div class="gift-lid-ribbon"></div>
+                <div class="gift-bow">
+                  <div class="bow-loop-l"></div>
+                  <div class="bow-center"></div>
+                  <div class="bow-loop-r"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Countdown Cards -->
+          <div class="countdown-grid" id="countdownGrid">
+            <div class="count-card">
+              <span class="count-num" id="cntDays">00</span>
+              <span class="count-label">Days</span>
+            </div>
+            <div class="count-card">
+              <span class="count-num" id="cntHours">00</span>
+              <span class="count-label">Hours</span>
+            </div>
+            <div class="count-card">
+              <span class="count-num" id="cntMins">00</span>
+              <span class="count-label">Mins</span>
+            </div>
+            <div class="count-card">
+              <span class="count-num" id="cntSecs">00</span>
+              <span class="count-label">Secs</span>
+            </div>
+          </div>
+
+          <!-- Unlocked Button (Visible when unlocked or via #open) -->
+          <div class="unlock-cta-wrap" id="unlockCta">
+            <button class="btn-open-gift" id="btnOpenGift">
+              <span>Tap to Open</span>
+              <span>🎁</span>
+            </button>
+          </div>
+
+          <div style="margin-top: 14px;">
+            <span class="test-skip-hint" id="skipCountdownBtn">Testing? Click here to skip countdown</span>
+          </div>
+        </div>
+
+        <div class="tap-hint-wrap" id="scene0TapHint" style="visibility: hidden;">
+          <div class="tap-hint">
+            <span class="tap-icon">👆</span>
+            <span>Tap the gift to open</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCENE 1: LOCK SCREEN & NOTIFICATION -->
+      <article class="scene" id="scene-1">
+        <div class="scene-content" style="width: 100%; height: 100%;">
+          <div class="lockscreen-wrap">
+            <div class="status-bar-mock">
+              <span id="liveStatusClock">12:00</span>
+              <div class="status-icons">
+                <span>5G</span>
+                <span>📶</span>
+                <span>🔋 100%</span>
+              </div>
+            </div>
+
+            <div class="lock-header">
+              <svg class="lock-icon-svg" viewBox="0 0 24 24">
+                <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 10 0v2h1zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3z"/>
+              </svg>
+              <div class="lock-clock" id="lockDisplayClock">12:00</div>
+              <div class="lock-date" id="lockDisplayDate">Sunday, October 25</div>
+            </div>
+
+            <!-- Spring Notification Card -->
+            <div class="notification-card" id="notifCard" role="button" tabindex="0">
+              <div class="notif-top">
+                <div class="notif-app-info">
+                  <div class="notif-badge-icon">💌</div>
+                  <span class="notif-app-name">Messages • Now</span>
+                </div>
+                <span class="notif-time">Just Now</span>
+              </div>
+              <div class="notif-title">1 New Message for Sumu</div>
+              <div class="notif-body">
+                Hey Sumu! A surprise package just arrived for you. Unlock your phone to see what's waiting inside... 💝
+              </div>
+            </div>
+
+            <div class="home-bar-mock"></div>
+          </div>
+        </div>
+
+        <div class="tap-hint-wrap">
+          <div class="tap-hint" id="scene1Prompt">
+            <span class="tap-icon">👆</span>
+            <span>Tap anywhere to unlock</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCENE 2: NAME + AGE CELEBRATION -->
+      <article class="scene" id="scene-2">
+        <div class="scene-content">
+          <div class="scene2-wrap">
+            <!-- Balloons Container -->
+            <div class="balloons-canvas" id="balloonsContainer"></div>
+
+            <div class="b-top-title">HAPPY BIRTHDAY</div>
+
+            <!-- Sumu Letters -->
+            <div class="name-letters-wrap" id="nameLetters">
+              <span class="letter-bubble lb-1">S</span>
+              <span class="letter-bubble lb-2">u</span>
+              <span class="letter-bubble lb-3">m</span>
+              <span class="letter-bubble lb-4">u</span>
+              <span class="letter-bubble lb-5">!</span>
+            </div>
+
+            <!-- Age Count-up Card -->
+            <div class="age-badge-card" id="ageBadgeCard">
+              <div class="age-pill-tag">Celebrating</div>
+              <div class="age-num-display">
+                <span id="ageCounter">0</span>
+                <span class="age-unit">✨</span>
+              </div>
+              <div class="age-tagline" id="ageTagline">Years of sunshine, kindness & smiles!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tap-hint-wrap">
+          <div class="tap-hint">
+            <span class="tap-icon">📸</span>
+            <span>Tap anywhere for memories</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCENE 3: MEMORIES POLAROID GALLERY -->
+      <article class="scene" id="scene-3">
+        <div class="scene-content">
+          <div class="memories-stage" id="memoriesStage">
+            <!-- Polaroid cards will be injected by JavaScript -->
+          </div>
+        </div>
+
+        <div class="tap-hint-wrap">
+          <div class="tap-hint" id="memoriesTapHint">
+            <span class="tap-icon">👆</span>
+            <span>Tap anywhere to flip memory</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCENE 4: FUTURE DOCTOR (ECG, BEATING HEART & PRESCRIPTION) -->
+      <article class="scene" id="scene-4">
+        <div class="scene-content">
+          <div class="doctor-stage">
+            
+            <!-- ECG Card -->
+            <div class="ecg-card">
+              <div class="ecg-header">
+                <span>VITALS MONITOR • DR. SUMU</span>
+                <span>100 BPM</span>
+              </div>
+              <div class="ecg-svg-wrap">
+                <svg id="ecg-svg" viewBox="0 0 320 80">
+                  <defs>
+                    <linearGradient id="ecgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#34d399" />
+                      <stop offset="60%" stop-color="#ff7597" />
+                      <stop offset="100%" stop-color="#a78bfa" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Hand-crafted realistic P-Q-R-S-T wave with baseline -->
+                  <path id="ecgPath" d="M 0,45 L 35,45 C 42,45 46,36 53,36 C 60,36 64,45 71,45 L 85,45 L 90,52 L 98,12 L 106,68 L 111,45 L 126,45 C 136,45 142,28 152,28 C 162,28 168,45 178,45 L 205,45 L 210,52 L 218,12 L 226,68 L 231,45 L 246,45 C 256,45 262,30 272,30 C 280,30 286,45 295,45 L 310,45"
+                        fill="none" stroke="url(#ecgGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div class="beating-heart-wrap">
+                  <svg class="beating-heart-svg" id="beatingHeart" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Prescription Pad (Rx Pad) -->
+            <div class="rx-card" id="rxCard">
+              <div class="rx-clinic-title">
+                <span>🩺 SWEET CARE CLINIC</span>
+              </div>
+              <div class="rx-clinic-sub">Department of Miracles & Lifelong Happiness</div>
+              
+              <div class="rx-meta-row">
+                <span><strong>Patient:</strong> Sumu</span>
+                <span><strong>Date:</strong> 25 Oct 2026</span>
+              </div>
+
+              <div class="rx-symbol">℞</div>
+
+              <div class="rx-item">
+                <strong>1. Joy & Laughter (1000mg):</strong> Take daily with smiles.
+              </div>
+              <div class="rx-item">
+                <strong>2. Stethoscope & MD Dreams:</strong> Unlimited refills.
+              </div>
+              <div class="rx-item">
+                <strong>3. Stress & Doubt:</strong> 0mg (Strictly forbidden).
+              </div>
+
+              <div class="rx-footer">
+                <div>Refills: UNLIMITED FOR LIFE</div>
+                <div class="rx-sig">Dr. Destiny ✨</div>
+              </div>
+
+              <!-- Slammed Stamp -->
+              <div class="dr-stamp" id="drStamp">FUTURE DR. SUMU ✓</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tap-hint-wrap">
+          <div class="tap-hint">
+            <span class="tap-icon">🎂</span>
+            <span>Tap anywhere to make a wish</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SCENE 5: CAKE FINALE, CANDLES & PERSONAL LETTER -->
+      <article class="scene" id="scene-5">
+        <div class="scene-content">
+          <div class="finale-stage">
+
+            <div style="margin-top: 6px;">
+              <h2 style="font-size: 1.55rem; font-weight: 700; color: var(--accent-pink);">Make a Birthday Wish!</h2>
+              <p style="font-size: 0.9rem; color: var(--text-sub); margin-top: 2px;">
+                Blow into your mic or tap the candles 🕯️
+              </p>
+            </div>
+
+            <!-- Birthday Cake -->
+            <div class="cake-container" id="cakeStage" role="button" tabindex="0" aria-label="Birthday Cake">
+              <div class="candles-row">
+                <div class="candle c-1" data-candle="1">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame"></div>
+                  <div class="candle-smoke"></div>
+                </div>
+                <div class="candle c-2" data-candle="2">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame"></div>
+                  <div class="candle-smoke"></div>
+                </div>
+                <div class="candle c-3" data-candle="3">
+                  <div class="candle-wick"></div>
+                  <div class="candle-flame"></div>
+                  <div class="candle-smoke"></div>
+                </div>
+              </div>
+              
+              <div class="cake-tier-1">
+                <div class="tier-drips"></div>
+              </div>
+              <div class="cake-tier-2">
+                <div class="tier-drips"></div>
+              </div>
+              <div class="cake-tier-3">
+                <div class="tier-drips"></div>
+              </div>
+              <div class="cake-pedestal"></div>
+            </div>
+
+            <!-- Mic Blow Level Indicator -->
+            <div class="mic-status-box" id="micStatusBox">
+              <span id="micStatusText">🎤 Tap candles or blow into mic</span>
+              <div class="mic-wave-indicator" id="micWaveWrap">
+                <div class="wave-bar" id="wb1"></div>
+                <div class="wave-bar" id="wb2"></div>
+                <div class="wave-bar" id="wb3"></div>
+                <div class="wave-bar" id="wb4"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Personal Letter Modal / Unfolding Envelope -->
+          <div class="letter-modal" id="letterModal">
+            <div class="letter-stamp-top">
+              <span>SPECIAL DELIVERY FOR SUMU</span>
+              <span>OCTOBER 25, 2026 💌</span>
+            </div>
+
+            <div class="letter-body" id="letterText">
+              <!-- CONFIG.letter will be populated here -->
+            </div>
+
+            <div class="letter-actions">
+              <button class="btn-action btn-melody" id="btnReplayMelody">
+                <span>🎵 Replay Melody</span>
+              </button>
+              <button class="btn-action btn-restart" id="btnRestartStory">
+                <span>↺ Relive Magic</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tap-hint-wrap" id="scene5TapHint">
+          <div class="tap-hint">
+            <span class="tap-icon">🎂</span>
+            <span>Tap the candles to blow them out</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       JAVASCRIPT CODE
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       CONFIG OBJECT (User editable configuration)
+       ========================================================================== */
+    const CONFIG = {
+      name: 'Sumu',
+      age: 20,                          // Sumu's age (defaults gracefully to 20 if null)
+      birthday: new Date(2026, 9, 25, 0, 0, 0), // Oct 25, 2026 00:00:00
+      memories: [
+        { e: '📸', c: 'The day we became friends…' },
+        { e: '🎵', c: 'That song we couldn\'t stop singing…' },
+        { e: '😂', c: 'When we laughed until we cried…' },
+        { e: '🌟', c: 'The moment I knew you were special…' }
+      ],
+      letter: 'Dear Sumu,\n\nHappy Birthday! 🎂\n\nYou are one of the most amazing people I know. Your kindness, your laughter, your determination to become a doctor — everything about you inspires me.\n\nI hope this year brings you everything you deserve and more. Keep shining, future Dr. Sumu! 🩺✨\n\nWith all my love,\nYour friend 💗'
+    };
+
+    /* ==========================================================================
+       STATE & CONTROLLERS
+       ========================================================================== */
+    let currentScene = 0;
+    let isUnlocked = false;
+    let candlesBlown = false;
+    let micStream = null;
+    let audioContext = null;
+    let micAnalyser = null;
+    let isMicActive = false;
+    let balloonInterval = null;
+
+    /* Safe Animation Helper (Works seamlessly with Anime.js v4 UMD and fallbacks) */
+    function doAnimate(target, params) {
+      if (window.anime && typeof window.anime.animate === 'function') {
+        return window.anime.animate(target, params);
+      } else if (typeof window.anime === 'function') {
+        return window.anime({ targets: target, ...params });
+      } else {
+        // Fallback for offline/safe mode
+        const elements = typeof target === 'string' ? document.querySelectorAll(target) : (Array.isArray(target) ? target : [target]);
+        elements.forEach(el => {
+          if (!el) return;
+          if (params.opacity !== undefined) {
+            el.style.opacity = Array.isArray(params.opacity) ? params.opacity[params.opacity.length - 1] : params.opacity;
+          }
+          if (params.transform !== undefined) el.style.transform = params.transform;
+        });
+        if (params.onComplete) setTimeout(params.onComplete, params.duration || 300);
+        return null;
+      }
+    }
+
+    /* Safe Stagger Helper */
+    function getStagger(step) {
+      if (window.anime && typeof window.anime.stagger === 'function') {
+        return window.anime.stagger(step);
+      }
+      return (el, i) => i * step;
+    }
+
+    /* ==========================================================================
+       SOUND SYSTEM (Web Audio API Synthesizer - No external files required)
+       ========================================================================== */
+    class SoundEngine {
+      constructor() {
+        this.ctx = null;
+        this.muted = false;
+        this.timeouts = [];
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) this.ctx = new AudioCtx();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      // Bubble / soft pop sound on taps
+      playPop() {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        try {
+          const t = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(450, t);
+          osc.frequency.exponentialRampToValueAtTime(820, t + 0.08);
+          gain.gain.setValueAtTime(0.14, t);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.08);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.09);
+        } catch (e) {}
+      }
+
+      // Sparkle chime sound
+      playSparkle() {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        try {
+          const t = this.ctx.currentTime;
+          [880, 1108, 1320, 1760].forEach((freq, idx) => {
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, t + idx * 0.045);
+            gain.gain.setValueAtTime(0.09, t + idx * 0.045);
+            gain.gain.exponentialRampToValueAtTime(0.001, t + idx * 0.045 + 0.28);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(t + idx * 0.045);
+            osc.stop(t + idx * 0.045 + 0.29);
+          });
+        } catch (e) {}
+      }
+
+      // Heavy stamp thud
+      playStampThud() {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        try {
+          const t = this.ctx.currentTime;
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(150, t);
+          osc.frequency.exponentialRampToValueAtTime(32, t + 0.2);
+          gain.gain.setValueAtTime(0.35, t);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(t);
+          osc.stop(t + 0.21);
+        } catch (e) {}
+      }
+
+      // Heartbeat Lub-Dub sound
+      playHeartbeat() {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        try {
+          const t = this.ctx.currentTime;
+          // Lub
+          const o1 = this.ctx.createOscillator();
+          const g1 = this.ctx.createGain();
+          o1.type = 'sine';
+          o1.frequency.setValueAtTime(80, t);
+          o1.frequency.exponentialRampToValueAtTime(45, t + 0.09);
+          g1.gain.setValueAtTime(0.22, t);
+          g1.gain.exponentialRampToValueAtTime(0.001, t + 0.09);
+          o1.connect(g1);
+          g1.connect(this.ctx.destination);
+          o1.start(t);
+          o1.stop(t + 0.1);
+
+          // Dub
+          const o2 = this.ctx.createOscillator();
+          const g2 = this.ctx.createGain();
+          o2.type = 'sine';
+          o2.frequency.setValueAtTime(70, t + 0.13);
+          o2.frequency.exponentialRampToValueAtTime(38, t + 0.24);
+          g2.gain.setValueAtTime(0.18, t + 0.13);
+          g2.gain.exponentialRampToValueAtTime(0.001, t + 0.24);
+          o2.connect(g2);
+          g2.connect(this.ctx.destination);
+          o2.start(t + 0.13);
+          o2.stop(t + 0.25);
+        } catch (e) {}
+      }
+
+      // Full Synthesized "Happy Birthday" Melody
+      playHappyBirthday(onComplete) {
+        if (this.muted) return;
+        this.init();
+        if (!this.ctx) return;
+        this.stopMelody();
+
+        // Key of C: G4=392, A4=440, B4=493.88, C5=523.25, D5=587.33, E5=659.25, F5=698.46, G5=783.99
+        const melody = [
+          // Phrase 1: Hap-py Birth-day to you
+          { f: 392.00, d: 0.32, p: 0.38 }, // Hap-
+          { f: 392.00, d: 0.18, p: 0.22 }, // py
+          { f: 440.00, d: 0.52, p: 0.58 }, // birth-
+          { f: 392.00, d: 0.52, p: 0.58 }, // day
+          { f: 523.25, d: 0.52, p: 0.58 }, // to
+          { f: 493.88, d: 1.05, p: 1.15, chord: 392 }, // you
+
+          // Phrase 2: Hap-py Birth-day to you
+          { f: 392.00, d: 0.32, p: 0.38 },
+          { f: 392.00, d: 0.18, p: 0.22 },
+          { f: 440.00, d: 0.52, p: 0.58 },
+          { f: 392.00, d: 0.52, p: 0.58 },
+          { f: 587.33, d: 0.52, p: 0.58 },
+          { f: 523.25, d: 1.05, p: 1.15, chord: 392 },
+
+          // Phrase 3: Hap-py Birth-day dear Su-mu
+          { f: 392.00, d: 0.32, p: 0.38 },
+          { f: 392.00, d: 0.18, p: 0.22 },
+          { f: 783.99, d: 0.52, p: 0.58 }, // birth- (G5)
+          { f: 659.25, d: 0.52, p: 0.58 }, // day (E5)
+          { f: 523.25, d: 0.52, p: 0.58 }, // dear (C5)
+          { f: 493.88, d: 0.52, p: 0.58 }, // Su- (B4)
+          { f: 440.00, d: 1.00, p: 1.10, chord: 349.23 }, // mu! (A4)
+
+          // Phrase 4: Hap-py Birth-day to you
+          { f: 698.46, d: 0.32, p: 0.38 }, // Hap- (F5)
+          { f: 698.46, d: 0.18, p: 0.22 }, // py
+          { f: 659.25, d: 0.52, p: 0.58 }, // birth- (E5)
+          { f: 523.25, d: 0.52, p: 0.58 }, // day (C5)
+          { f: 587.33, d: 0.52, p: 0.58 }, // to (D5)
+          { f: 523.25, d: 1.40, p: 1.60, chord: 261.63 }  // you! (C5)
+        ];
+
+        let start = this.ctx.currentTime + 0.12;
+        let cumulative = 0;
+
+        melody.forEach((note) => {
+          const noteTime = start + cumulative;
+          if (note.f > 0) {
+            // Music box shimmer voice: fundamental + gentle overtone
+            const o1 = this.ctx.createOscillator();
+            const o2 = this.ctx.createOscillator();
+            const g = this.ctx.createGain();
+
+            o1.type = 'sine';
+            o1.frequency.setValueAtTime(note.f, noteTime);
+
+            o2.type = 'triangle';
+            o2.frequency.setValueAtTime(note.f * 2.002, noteTime);
+
+            g.gain.setValueAtTime(0.0001, noteTime);
+            g.gain.linearRampToValueAtTime(0.18, noteTime + 0.025);
+            g.gain.exponentialRampToValueAtTime(0.0001, noteTime + note.d);
+
+            o1.connect(g);
+            o2.connect(g);
+            g.connect(this.ctx.destination);
+
+            o1.start(noteTime);
+            o1.stop(noteTime + note.d + 0.05);
+            o2.start(noteTime);
+            o2.stop(noteTime + note.d + 0.05);
+
+            // Optional warm harmony chord note
+            if (note.chord) {
+              const oC = this.ctx.createOscillator();
+              const gC = this.ctx.createGain();
+              oC.type = 'sine';
+              oC.frequency.setValueAtTime(note.chord, noteTime);
+              gC.gain.setValueAtTime(0.0001, noteTime);
+              gC.gain.linearRampToValueAtTime(0.09, noteTime + 0.03);
+              gC.gain.exponentialRampToValueAtTime(0.0001, noteTime + note.d);
+              oC.connect(gC);
+              gC.connect(this.ctx.destination);
+              oC.start(noteTime);
+              oC.stop(noteTime + note.d + 0.05);
+            }
+          }
+          cumulative += note.p;
+        });
+
+        const totalMs = cumulative * 1000;
+        const tid = setTimeout(() => {
+          if (onComplete) onComplete();
+        }, totalMs);
+        this.timeouts.push(tid);
+      }
+
+      stopMelody() {
+        this.timeouts.forEach(t => clearTimeout(t));
+        this.timeouts = [];
+      }
+    }
+
+    const sound = new SoundEngine();
+
+    /* ==========================================================================
+       CANVAS FX: CONFETTI & FIREWORKS ENGINE
+       ========================================================================== */
+    class ParticleEngine {
+      constructor() {
+        this.canvas = document.getElementById('fx-canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.confetti = [];
+        this.fireworks = [];
+        this.sparkles = [];
+        this.isRainingConfetti = false;
+        this.colors = ['#ff7597', '#ff9ebb', '#a78bfa', '#c4b5fd', '#34d399', '#6ee7b7', '#fbbf24', '#fde68a', '#fb923c'];
+        this.resize();
+        window.addEventListener('resize', () => this.resize());
+        this.loop = this.loop.bind(this);
+        requestAnimationFrame(this.loop);
+      }
+
+      resize() {
+        this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.canvas.width = this.width * this.dpr;
+        this.canvas.height = this.height * this.dpr;
+        this.ctx.scale(this.dpr, this.dpr);
+      }
+
+      burstConfetti(originX, originY, count = 45) {
+        const x = originX !== undefined ? originX : this.width / 2;
+        const y = originY !== undefined ? originY : this.height / 2;
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 8 + 3;
+          this.confetti.push({
+            x,
+            y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 2.5,
+            size: Math.random() * 7 + 5,
+            color: this.colors[Math.floor(Math.random() * this.colors.length)],
+            rotation: Math.random() * 360,
+            rotSpeed: (Math.random() - 0.5) * 12,
+            wobble: Math.random() * 10,
+            wobbleSpeed: Math.random() * 0.1 + 0.05,
+            gravity: 0.18,
+            drag: 0.96,
+            shape: Math.random() > 0.3 ? 'rect' : 'circle',
+            alpha: 1,
+            decay: Math.random() * 0.008 + 0.004
+          });
+        }
+      }
+
+      startConfettiRain() {
+        this.isRainingConfetti = true;
+      }
+      stopConfettiRain() {
+        this.isRainingConfetti = false;
+      }
+
+      spawnFirework() {
+        const startX = Math.random() * (this.width * 0.8) + (this.width * 0.1);
+        const targetY = Math.random() * (this.height * 0.4) + (this.height * 0.15);
+        this.fireworks.push({
+          x: startX,
+          y: this.height + 10,
+          targetY,
+          vx: (Math.random() - 0.5) * 2,
+          vy: -(Math.random() * 4 + 11),
+          color: this.colors[Math.floor(Math.random() * this.colors.length)],
+          exploded: false,
+          trail: []
+        });
+      }
+
+      explodeFirework(x, y, baseColor) {
+        sound.playPop();
+        const sparkCount = Math.floor(Math.random() * 30) + 45;
+        for (let i = 0; i < sparkCount; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 6 + 1.5;
+          this.sparkles.push({
+            x,
+            y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            color: Math.random() > 0.4 ? baseColor : this.colors[Math.floor(Math.random() * this.colors.length)],
+            alpha: 1,
+            decay: Math.random() * 0.015 + 0.012,
+            gravity: 0.06,
+            drag: 0.965,
+            size: Math.random() * 2.8 + 1.2
+          });
+        }
+      }
+
+      loop() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+
+        // Continuous Confetti Rain
+        if (this.isRainingConfetti && Math.random() < 0.35) {
+          this.confetti.push({
+            x: Math.random() * this.width,
+            y: -10,
+            vx: (Math.random() - 0.5) * 2,
+            vy: Math.random() * 2 + 2,
+            size: Math.random() * 7 + 4,
+            color: this.colors[Math.floor(Math.random() * this.colors.length)],
+            rotation: Math.random() * 360,
+            rotSpeed: (Math.random() - 0.5) * 8,
+            wobble: Math.random() * 10,
+            wobbleSpeed: 0.06,
+            gravity: 0.04,
+            drag: 0.99,
+            shape: Math.random() > 0.35 ? 'rect' : 'circle',
+            alpha: 1,
+            decay: 0.002
+          });
+        }
+
+        // Draw Confetti
+        for (let i = this.confetti.length - 1; i >= 0; i--) {
+          const p = this.confetti[i];
+          p.vx *= p.drag;
+          p.vy = (p.vy + p.gravity) * p.drag;
+          p.x += p.vx + Math.sin(p.wobble) * 1.2;
+          p.y += p.vy;
+          p.wobble += p.wobbleSpeed;
+          p.rotation += p.rotSpeed;
+          p.alpha -= p.decay;
+
+          if (p.alpha <= 0 || p.y > this.height + 20) {
+            this.confetti.splice(i, 1);
+            continue;
+          }
+
+          this.ctx.save();
+          this.ctx.globalAlpha = Math.max(0, p.alpha);
+          this.ctx.translate(p.x, p.y);
+          this.ctx.rotate((p.rotation * Math.PI) / 180);
+          this.ctx.fillStyle = p.color;
+
+          if (p.shape === 'rect') {
+            const wobbleScale = Math.cos(p.wobble);
+            this.ctx.fillRect(-p.size / 2, (-p.size * wobbleScale) / 2, p.size, p.size * wobbleScale);
+          } else {
+            this.ctx.beginPath();
+            this.ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+            this.ctx.fill();
+          }
+          this.ctx.restore();
+        }
+
+        // Update Fireworks Rockets
+        for (let i = this.fireworks.length - 1; i >= 0; i--) {
+          const fw = this.fireworks[i];
+          fw.x += fw.vx;
+          fw.y += fw.vy;
+          fw.vy += 0.08;
+
+          // Rocket Trail
+          this.ctx.save();
+          this.ctx.beginPath();
+          this.ctx.arc(fw.x, fw.y, 2.5, 0, Math.PI * 2);
+          this.ctx.fillStyle = fw.color;
+          this.ctx.shadowBlur = 8;
+          this.ctx.shadowColor = fw.color;
+          this.ctx.fill();
+          this.ctx.restore();
+
+          if (fw.vy >= -1 || fw.y <= fw.targetY) {
+            this.explodeFirework(fw.x, fw.y, fw.color);
+            this.fireworks.splice(i, 1);
+          }
+        }
+
+        // Update Fireworks Sparks
+        for (let i = this.sparkles.length - 1; i >= 0; i--) {
+          const s = this.sparkles[i];
+          s.vx *= s.drag;
+          s.vy = (s.vy + s.gravity) * s.drag;
+          s.x += s.vx;
+          s.y += s.vy;
+          s.alpha -= s.decay;
+
+          if (s.alpha <= 0) {
+            this.sparkles.splice(i, 1);
+            continue;
+          }
+
+          this.ctx.save();
+          this.ctx.globalAlpha = Math.max(0, s.alpha);
+          this.ctx.beginPath();
+          this.ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          this.ctx.fillStyle = s.color;
+          this.ctx.shadowBlur = 6;
+          this.ctx.shadowColor = s.color;
+          this.ctx.fill();
+          this.ctx.restore();
+        }
+
+        requestAnimationFrame(this.loop);
+      }
+    }
+
+    const fx = new ParticleEngine();
+
+    /* ==========================================================================
+       HAPTIC VIBRATION HELPER
+       ========================================================================== */
+    function vibrateDevice(pattern) {
+      if (navigator.vibrate) {
+        try {
+          navigator.vibrate(pattern);
+        } catch (e) {}
+      }
+    }
+
+    /* ==========================================================================
+       DEVICE TILT & MOUSE PARALLAX
+       ========================================================================== */
+    window.addEventListener('deviceorientation', (e) => {
+      if (e.gamma !== null && e.beta !== null) {
+        const tiltX = Math.max(-18, Math.min(18, e.gamma)) * 0.7;
+        const tiltY = Math.max(-18, Math.min(18, e.beta - 45)) * 0.7;
+        document.documentElement.style.setProperty('--tilt-x', `${tiltX}px`);
+        document.documentElement.style.setProperty('--tilt-y', `${tiltY}px`);
+      }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      const xPct = (e.clientX / window.innerWidth) - 0.5;
+      const yPct = (e.clientY / window.innerHeight) - 0.5;
+      document.documentElement.style.setProperty('--tilt-x', `${xPct * 18}px`);
+      document.documentElement.style.setProperty('--tilt-y', `${yPct * 18}px`);
+    });
+
+    /* ==========================================================================
+       SCENE 0: COUNTDOWN GATE LOGIC
+       ========================================================================== */
+    const countdownGrid = document.getElementById('countdownGrid');
+    const unlockCta = document.getElementById('unlockCta');
+    const gateTitle = document.getElementById('gateTitle');
+    const gateSubtitle = document.getElementById('gateSubtitle');
+    const giftBox = document.getElementById('giftBox');
+    const giftLid = document.getElementById('giftLid');
+    const skipBtn = document.getElementById('skipCountdownBtn');
+    const scene0TapHint = document.getElementById('scene0TapHint');
+
+    function checkUnlockState() {
+      const now = new Date();
+      const hasOpenHash = window.location.hash.toLowerCase().includes('open');
+      const timeRemaining = CONFIG.birthday.getTime() - now.getTime();
+
+      if (timeRemaining <= 0 || hasOpenHash) {
+        unlockBirthdayGate();
+      } else {
+        updateCountdownDisplay(timeRemaining);
+      }
+    }
+
+    function updateCountdownDisplay(ms) {
+      const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      document.getElementById('cntDays').textContent = String(days).padStart(2, '0');
+      document.getElementById('cntHours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cntMins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cntSecs').textContent = String(secs).padStart(2, '0');
+    }
+
+    function unlockBirthdayGate() {
+      if (isUnlocked) return;
+      isUnlocked = true;
+
+      gateTitle.textContent = "Happy Birthday Sumu! 🎉";
+      gateSubtitle.textContent = "A magical story is ready to unfold just for you...";
+      countdownGrid.style.display = 'none';
+      skipBtn.style.display = 'none';
+      unlockCta.style.display = 'flex';
+      scene0TapHint.style.visibility = 'visible';
+
+      // Animate unlock reveal
+      doAnimate('#unlockCta', {
+        opacity: [0, 1],
+        scale: [0.85, 1],
+        duration: 600,
+        ease: 'outBack(1.7)'
+      });
+
+      doAnimate('.gift-glow', {
+        scale: [1, 1.4],
+        opacity: [0.5, 0.9],
+        duration: 800,
+        alternate: true,
+        loop: true
+      });
+    }
+
+    // Countdown interval
+    checkUnlockState();
+    const countdownTimer = setInterval(() => {
+      if (!isUnlocked) checkUnlockState();
+    }, 1000);
+
+    // Skip Button Handler
+    skipBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      window.location.hash = 'open';
+      unlockBirthdayGate();
+      sound.playSparkle();
+      fx.burstConfetti(window.innerWidth / 2, window.innerHeight / 2, 25);
+    });
+
+    // Opening Gift Box triggers Scene 1
+    function triggerOpenGift() {
+      if (!isUnlocked) {
+        // Subtle reminder shake if not unlocked yet
+        doAnimate(giftBox, {
+          rotate: [-4, 4, -4, 4, 0],
+          duration: 400
+        });
+        vibrateDevice(40);
+        return;
+      }
+
+      sound.playSparkle();
+      vibrateDevice([50, 40, 80]);
+
+      // Animate Lid Pop Off
+      doAnimate(giftLid, {
+        translateY: -90,
+        rotate: -24,
+        scale: 1.15,
+        opacity: [1, 0],
+        duration: 650,
+        ease: 'outBack(1.4)'
+      });
+
+      // Burst confetti from the gift box
+      const rect = giftBox.getBoundingClientRect();
+      fx.burstConfetti(rect.left + rect.width / 2, rect.top + rect.height / 3, 50);
+
+      setTimeout(() => {
+        goToScene(1);
+      }, 550);
+    }
+
+    giftBox.addEventListener('click', triggerOpenGift);
+    document.getElementById('btnOpenGift').addEventListener('click', (e) => {
+      e.stopPropagation();
+      triggerOpenGift();
+    });
+
+    /* ==========================================================================
+       SCENE 1: LOCK SCREEN LOGIC
+       ========================================================================== */
+    const notifCard = document.getElementById('notifCard');
+
+    function initScene1() {
+      // Update clocks
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+      document.getElementById('liveStatusClock').textContent = timeStr;
+      document.getElementById('lockDisplayClock').textContent = timeStr;
+
+      // Spring slide-in notification card
+      doAnimate(notifCard, {
+        translateY: [60, 0],
+        opacity: [0, 1],
+        scale: [0.88, 1],
+        duration: 900,
+        delay: 200,
+        ease: 'outElastic(1, 0.6)',
+        onComplete: () => {
+          vibrateDevice(50);
+          sound.playPop();
+          // Gentle periodic shake nudge
+          doAnimate(notifCard, {
+            rotate: [-2, 2, -1, 1, 0],
+            duration: 600,
+            delay: 1800,
+            loop: true,
+            loopDelay: 3000
+          });
+        }
+      });
+    }
+
+    /* ==========================================================================
+       SCENE 2: NAME + AGE CELEBRATION
+       ========================================================================== */
+    const ageCounter = document.getElementById('ageCounter');
+    const balloonsContainer = document.getElementById('balloonsContainer');
+
+    function initScene2() {
+      sound.playSparkle();
+      vibrateDevice([40, 30, 40]);
+
+      // 1. Pop letters of Sumu's name with elastic spring & stagger
+      const letters = document.querySelectorAll('.letter-bubble');
+      letters.forEach((el, idx) => {
+        doAnimate(el, {
+          scale: [0, 1],
+          translateY: [60, 0],
+          rotate: [-15 + idx * 8, 0],
+          duration: 850,
+          delay: 150 + idx * 120,
+          ease: 'outElastic(1.2, 0.5)'
+        });
+      });
+
+      // 2. Count-up Age
+      const targetAge = (typeof CONFIG.age === 'number' && CONFIG.age > 0) ? CONFIG.age : 20;
+      let currentVal = 0;
+      const countDuration = 1400;
+      const stepInterval = Math.max(25, Math.floor(countDuration / targetAge));
+
+      const timer = setInterval(() => {
+        currentVal++;
+        ageCounter.textContent = currentVal;
+        if (currentVal >= targetAge) {
+          clearInterval(timer);
+          // Explode celebratory confetti on age complete
+          const rect = document.getElementById('ageBadgeCard').getBoundingClientRect();
+          fx.burstConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, 45);
+          sound.playSparkle();
+          vibrateDevice([80, 50, 100]);
+        }
+      }, stepInterval);
+
+      // 3. Continuously float rising balloons in background
+      startBalloons();
+    }
+
+    function startBalloons() {
+      if (balloonInterval) clearInterval(balloonInterval);
+      balloonsContainer.innerHTML = '';
+
+      const balloonColors = ['b-pink', 'b-lavender', 'b-mint', 'b-yellow', 'b-peach'];
+
+      function spawnOneBalloon() {
+        const b = document.createElement('div');
+        const colorClass = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+        b.className = `floating-balloon ${colorClass}`;
+        const startX = Math.random() * 85 + 5;
+        b.style.left = `${startX}%`;
+        balloonsContainer.appendChild(b);
+
+        doAnimate(b, {
+          translateY: [0, -window.innerHeight - 150],
+          translateX: [(Math.random() - 0.5) * 40, (Math.random() - 0.5) * 60],
+          rotate: [(Math.random() - 0.5) * 15, (Math.random() - 0.5) * 25],
+          duration: Math.random() * 3000 + 5500,
+          ease: 'linear',
+          onComplete: () => {
+            if (b.parentNode) b.parentNode.removeChild(b);
+          }
+        });
+      }
+
+      for (let i = 0; i < 4; i++) {
+        setTimeout(spawnOneBalloon, i * 400);
+      }
+      balloonInterval = setInterval(spawnOneBalloon, 1600);
+    }
+
+    /* ==========================================================================
+       SCENE 3: MEMORIES POLAROID GALLERY
+       ========================================================================== */
+    const memoriesStage = document.getElementById('memoriesStage');
+    let currentMemoryIdx = 0;
+    let isTypewriting = false;
+
+    function initScene3() {
+      currentMemoryIdx = 0;
+      renderPolaroids();
+    }
+
+    function renderPolaroids() {
+      memoriesStage.innerHTML = '';
+      const memories = CONFIG.memories;
+      const tilts = [-5, 4, -3, 6];
+
+      memories.forEach((mem, idx) => {
+        const card = document.createElement('div');
+        card.className = 'polaroid-card';
+        card.id = `polaroid-${idx}`;
+        card.style.zIndex = memories.length - idx;
+        const tilt = tilts[idx % tilts.length];
+
+        card.innerHTML = `
+          <div class="washi-tape"></div>
+          <div class="photo-frame">
+            <span class="memory-index-badge">#${idx + 1} of ${memories.length}</span>
+            <div class="photo-big-emoji">${mem.e}</div>
+          </div>
+          <div class="polaroid-caption-box">
+            <div class="remember-tag">Remember when…</div>
+            <div class="typewriter-text" id="typewriter-${idx}"></div>
+          </div>
+        `;
+
+        memoriesStage.appendChild(card);
+
+        // Drop-in bounce animation
+        doAnimate(card, {
+          translateY: [-280, 0],
+          rotate: [tilt * 2, tilt],
+          scale: [0.8, 1],
+          opacity: [0, 1],
+          duration: 700,
+          delay: idx * 120,
+          ease: 'outBack(1.4)'
+        });
+      });
+
+      // Trigger typewriter on top card
+      typewriteCaption(0);
+    }
+
+    function typewriteCaption(idx) {
+      if (idx >= CONFIG.memories.length) return;
+      isTypewriting = true;
+      const targetEl = document.getElementById(`typewriter-${idx}`);
+      if (!targetEl) return;
+
+      const fullText = CONFIG.memories[idx].c;
+      targetEl.innerHTML = '<span class="typing-cursor"></span>';
+      let charIdx = 0;
+
+      function typeNext() {
+        if (charIdx < fullText.length) {
+          charIdx++;
+          targetEl.textContent = fullText.slice(0, charIdx);
+          const cursor = document.createElement('span');
+          cursor.className = 'typing-cursor';
+          targetEl.appendChild(cursor);
+          setTimeout(typeNext, 45);
+        } else {
+          isTypewriting = false;
+        }
+      }
+      typeNext();
+    }
+
+    function advanceMemoryCard() {
+      if (currentMemoryIdx < CONFIG.memories.length - 1) {
+        const topCard = document.getElementById(`polaroid-${currentMemoryIdx}`);
+        if (topCard) {
+          sound.playPop();
+          vibrateDevice(35);
+          // Throw top polaroid away with rotation
+          doAnimate(topCard, {
+            translateX: [0, 320],
+            translateY: [0, -60],
+            rotate: [4, 35],
+            opacity: [1, 0],
+            duration: 500,
+            ease: 'inOutQuad',
+            onComplete: () => {
+              topCard.style.display = 'none';
+            }
+          });
+        }
+        currentMemoryIdx++;
+        typewriteCaption(currentMemoryIdx);
+      } else {
+        // Last memory reached, advance to next scene
+        sound.playSparkle();
+        goToScene(4);
+      }
+    }
+
+    /* ==========================================================================
+       SCENE 4: FUTURE DOCTOR (ECG, BEATING HEART & PRESCRIPTION)
+       ========================================================================== */
+    const ecgPath = document.getElementById('ecgPath');
+    const beatingHeart = document.getElementById('beatingHeart');
+    const drStamp = document.getElementById('drStamp');
+    const rxCard = document.getElementById('rxCard');
+    let heartInterval = null;
+
+    function initScene4() {
+      // 1. Reset SVG Path strokeDashoffset
+      const pathLength = ecgPath.getTotalLength();
+      ecgPath.style.strokeDasharray = pathLength;
+      ecgPath.style.strokeDashoffset = pathLength;
+      beatingHeart.classList.remove('beating');
+      drStamp.style.opacity = '0';
+      drStamp.style.transform = 'rotate(-12deg) scale(0)';
+
+      // 2. Draw ECG Line using Anime.js
+      doAnimate(ecgPath, {
+        strokeDashoffset: [pathLength, 0],
+        duration: 1600,
+        ease: 'easeInOutSine',
+        onComplete: () => {
+          // ECG completes and connects to beating heart!
+          beatingHeart.classList.add('beating');
+          sound.playHeartbeat();
+          vibrateDevice([40, 25, 40]);
+
+          if (heartInterval) clearInterval(heartInterval);
+          heartInterval = setInterval(() => {
+            if (currentScene === 4) {
+              sound.playHeartbeat();
+            } else {
+              clearInterval(heartInterval);
+            }
+          }, 1100);
+
+          // 3. Slide in Prescription Card
+          doAnimate(rxCard, {
+            translateY: [35, 0],
+            opacity: [0, 1],
+            scale: [0.94, 1],
+            duration: 650,
+            delay: 150,
+            ease: 'outBack(1.2)',
+            onComplete: () => {
+              // 4. Rubber Stamp Slams down with explosive bounce & haptic feedback
+              setTimeout(() => {
+                sound.playStampThud();
+                vibrateDevice([70, 40, 110]);
+                fx.burstConfetti(window.innerWidth / 2, window.innerHeight * 0.65, 30);
+
+                doAnimate(drStamp, {
+                  scale: [3.5, 1],
+                  opacity: [0, 1],
+                  rotate: [-35, -12],
+                  duration: 480,
+                  ease: 'outElastic(1.1, 0.45)'
+                });
+              }, 450);
+            }
+          });
+        }
+      });
+    }
+
+    /* ==========================================================================
+       SCENE 5: CAKE FINALE, CANDLES & PERSONAL LETTER
+       ========================================================================== */
+    const cakeStage = document.getElementById('cakeStage');
+    const letterModal = document.getElementById('letterModal');
+    const letterText = document.getElementById('letterText');
+    const micStatusText = document.getElementById('micStatusText');
+    const scene5TapHint = document.getElementById('scene5TapHint');
+
+    function initScene5() {
+      candlesBlown = false;
+      letterModal.classList.remove('open');
+      scene5TapHint.style.display = 'flex';
+
+      // Restore candle flames
+      document.querySelectorAll('.candle-flame').forEach(f => {
+        f.style.opacity = '1';
+        f.style.transform = 'translateX(-50%) scale(1)';
+      });
+
+      // Prepare letter content from CONFIG.letter
+      letterText.textContent = CONFIG.letter;
+
+      // Initialize mic detection for blowing out candles
+      initMicBlow();
+    }
+
+    async function initMicBlow() {
+      if (isMicActive) return;
+      try {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        micStream = stream;
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        audioContext = new AudioCtx();
+        const source = audioContext.createMediaStreamSource(stream);
+        micAnalyser = audioContext.createAnalyser();
+        micAnalyser.fftSize = 256;
+        source.connect(micAnalyser);
+        isMicActive = true;
+        micStatusText.textContent = "🎤 Blow into mic or tap candles!";
+
+        const dataArray = new Uint8Array(micAnalyser.frequencyBinCount);
+        let blowCount = 0;
+
+        function checkMicLevel() {
+          if (candlesBlown || !isMicActive) return;
+          micAnalyser.getByteFrequencyData(dataArray);
+
+          // Low frequencies (wind/breath noise is between bins 1 and 10)
+          let lowSum = 0;
+          for (let i = 1; i <= 10; i++) {
+            lowSum += dataArray[i];
+          }
+          const avgLow = lowSum / 10;
+
+          // Animate small wave indicator
+          const h1 = Math.min(18, 4 + avgLow * 0.15);
+          const h2 = Math.min(18, 4 + avgLow * 0.22);
+          document.getElementById('wb1').style.height = `${h1}px`;
+          document.getElementById('wb2').style.height = `${h2}px`;
+          document.getElementById('wb3').style.height = `${h1}px`;
+          document.getElementById('wb4').style.height = `${h2 * 0.8}px`;
+
+          // Blow threshold detection
+          if (avgLow > 58) {
+            blowCount++;
+            if (blowCount >= 3) {
+              extinguishCandles();
+              return;
+            }
+          } else {
+            blowCount = Math.max(0, blowCount - 1);
+          }
+
+          requestAnimationFrame(checkMicLevel);
+        }
+        requestAnimationFrame(checkMicLevel);
+
+      } catch (err) {
+        micStatusText.textContent = "🎂 Tap the candles to extinguish them!";
+      }
+    }
+
+    function extinguishCandles() {
+      if (candlesBlown) return;
+      candlesBlown = true;
+
+      // Stop mic stream
+      if (micStream) {
+        micStream.getTracks().forEach(track => track.stop());
+        micStream = null;
+        isMicActive = false;
+      }
+
+      sound.playPop();
+      vibrateDevice([60, 40, 100, 50, 150]);
+
+      // Extinguish candle flames and spawn smoke
+      document.querySelectorAll('.candle-flame').forEach(f => {
+        doAnimate(f, {
+          opacity: [1, 0],
+          scale: [1, 0.2],
+          duration: 350
+        });
+      });
+
+      document.querySelectorAll('.candle-smoke').forEach(s => {
+        doAnimate(s, {
+          opacity: [0, 0.8, 0],
+          scale: [0.5, 1.6],
+          translateY: [0, -35],
+          duration: 1200
+        });
+      });
+
+      scene5TapHint.style.display = 'none';
+      micStatusText.textContent = "✨ Wish Granted! Happy Birthday! ✨";
+
+      // Trigger Grand Fireworks & Confetti
+      fx.startConfettiRain();
+      fx.spawnFirework();
+      setTimeout(() => fx.spawnFirework(), 500);
+      setTimeout(() => fx.spawnFirework(), 1100);
+      setTimeout(() => fx.spawnFirework(), 1700);
+
+      // Play Synthesized Birthday Melody
+      sound.playHappyBirthday();
+
+      // Open Personal Letter Modal
+      setTimeout(() => {
+        letterModal.classList.add('open');
+        sound.playSparkle();
+        vibrateDevice([80, 50, 80]);
+      }, 1600);
+    }
+
+    // Direct Tap on Cake or Candles triggers extinguish
+    cakeStage.addEventListener('click', (e) => {
+      e.stopPropagation();
+      extinguishCandles();
+    });
+
+    document.getElementById('btnReplayMelody').addEventListener('click', (e) => {
+      e.stopPropagation();
+      sound.playHappyBirthday();
+      fx.spawnFirework();
+      vibrateDevice(50);
+    });
+
+    document.getElementById('btnRestartStory').addEventListener('click', (e) => {
+      e.stopPropagation();
+      fx.stopConfettiRain();
+      sound.stopMelody();
+      goToScene(0);
+    });
+
+    /* ==========================================================================
+       SCENE NAVIGATION & ROUTING
+       ========================================================================== */
+    function goToScene(targetIdx) {
+      if (targetIdx === currentScene) return;
+
+      const currentEl = document.getElementById(`scene-${currentScene}`);
+      const nextEl = document.getElementById(`scene-${targetIdx}`);
+
+      if (currentEl) {
+        currentEl.classList.remove('active');
+        currentEl.classList.add('exit');
+        setTimeout(() => currentEl.classList.remove('exit'), 500);
+      }
+
+      currentScene = targetIdx;
+
+      if (nextEl) {
+        nextEl.classList.add('active');
+      }
+
+      // Update Header Progress Indicators
+      document.querySelectorAll('.prog-pill').forEach((pill, idx) => {
+        pill.classList.remove('active');
+        if (idx === currentScene) {
+          pill.classList.add('active');
+        } else if (idx < currentScene) {
+          pill.classList.add('completed');
+        } else {
+          pill.classList.remove('completed');
+        }
+      });
+
+      // Initialize specific scene behaviors
+      switch (targetIdx) {
+        case 1:
+          initScene1();
+          break;
+        case 2:
+          initScene2();
+          break;
+        case 3:
+          initScene3();
+          break;
+        case 4:
+          initScene4();
+          break;
+        case 5:
+          initScene5();
+          break;
+      }
+    }
+
+    // Tap anywhere on scene transitions
+    document.querySelectorAll('.scene').forEach((sceneEl, idx) => {
+      sceneEl.addEventListener('click', (e) => {
+        // Prevent accidental skip on buttons / inputs
+        if (e.target.closest('button') || e.target.closest('.gift-stage') || e.target.closest('.letter-modal')) {
+          return;
+        }
+
+        sound.playPop();
+
+        if (idx === 0) {
+          // Scene 0 only advances if unlocked
+          if (isUnlocked) triggerOpenGift();
+        } else if (idx === 1) {
+          goToScene(2);
+        } else if (idx === 2) {
+          goToScene(3);
+        } else if (idx === 3) {
+          advanceMemoryCard();
+        } else if (idx === 4) {
+          goToScene(5);
+        }
+      });
+    });
+
+    // Make progress pills clickable for easy revisiting
+    document.querySelectorAll('.prog-pill').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = parseInt(pill.getAttribute('data-step'), 10);
+        if (target <= currentScene || isUnlocked) {
+          sound.playPop();
+          goToScene(target);
+        }
+      });
+    });
+
+    /* ==========================================================================
+       THEME & SOUND TOGGLE
+       ========================================================================== */
+    const themeToggle = document.getElementById('themeToggle');
+    const soundToggle = document.getElementById('soundToggle');
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const isDark = current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const next = isDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+      sound.playPop();
+    }
+    themeToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleTheme();
+    });
+
+    soundToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sound.muted = !sound.muted;
+      soundToggle.textContent = sound.muted ? '🔕' : '🔔';
+      if (!sound.muted) sound.playPop();
+    });
+
+  </script>
+</body>
+</html>
