@@ -2,6 +2,12 @@
 
 A single-page birthday story for Sumu.
 
+## Project structure
+
+- `index.html` contains the page markup.
+- `css/styles.css` contains the page styles.
+- `js/script.js` contains the page behavior.
+
 ## Run locally
 
 Open `index.html` in a modern web browser. The page loads Anime.js and Google Fonts from external CDNs, so those features require an internet connection.
